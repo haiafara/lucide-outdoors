@@ -1,0 +1,25 @@
+export type { IconNode, IconNodeChild } from './types'
+
+export {
+  mountain,
+  water,
+  church,
+  trailSign,
+  eye,
+  home,
+  waterfall,
+  cave,
+  monument,
+  hiking,
+  biking,
+  roadCycling,
+  gravelBiking,
+  mountainBiking,
+  eRoadCycling,
+  eGravelBiking,
+  eMountainBiking,
+  running,
+  walking,
+  skiing,
+  snowboarding,
+} from './icons'
