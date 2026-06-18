@@ -1,4 +1,6 @@
 export type { IconNode, IconNodeChild } from './types'
+export type { IconMeta, IconAuthor } from './metadata'
+export { iconMetadata } from './metadata'
 
 export {
   // Activities

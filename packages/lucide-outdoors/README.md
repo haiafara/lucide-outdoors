@@ -27,7 +27,21 @@ console.log(activityHiking)
 // ]
 ```
 
-Use with [`lucide-outdoors-vue`](https://github.com/haiafara/lucide-outdoors-vue) to get ready-made Vue components.
+Use with [`lucide-outdoors-vue`](https://github.com/haiafara/lucide-outdoors/tree/main/packages/lucide-outdoors-vue) to get ready-made Vue components.
+
+## Metadata
+
+Each icon has an entry in `iconMetadata`, keyed by its kebab-case name (the same key
+`resolveIcon()` uses), with designer credit:
+
+```ts
+import { iconMetadata } from 'lucide-outdoors'
+
+iconMetadata['activity-hiking']
+// { author: { name: 'Bogdan Rosu', github: 'bogdanspn' } }
+```
+
+The current icon set was designed by [Bogdan Rosu](https://github.com/bogdanspn).
 
 ## Icons
 

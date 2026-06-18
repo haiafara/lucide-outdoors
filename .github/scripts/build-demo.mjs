@@ -73,6 +73,14 @@ const places = entries.filter(([name]) => !name.startsWith('activity'))
 const section = (title, items) =>
   `<h2>${title} <span class="count">${items.length}</span></h2>\n<div class="grid">\n${items.map(renderCard).join('\n')}\n</div>`
 
+// Designer credits, derived from the icon metadata (unique by GitHub handle).
+const authors = [...new Map(
+  Object.values(icons.iconMetadata ?? {}).map((m) => [m.author.github, m.author]),
+).values()]
+const credits = authors
+  .map((a) => `<a href="https://github.com/${a.github}">${a.name}</a>`)
+  .join(', ')
+
 const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,6 +102,10 @@ const html = `<!DOCTYPE html>
   .sub { color: #666; font-size: 14px; margin: 0; }
   .sub a { color: #2563eb; text-decoration: none; }
   .sub a:hover { text-decoration: underline; }
+  footer { margin-top: 48px; font-size: 13px; color: #666; }
+  footer a { color: #2563eb; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  @media (prefers-color-scheme: dark) { footer { color: #999; } }
   .count { font-variant-numeric: tabular-nums; }
   .grid {
     display: grid; gap: 16px;
@@ -128,6 +140,7 @@ const html = `<!DOCTYPE html>
 </header>
 ${section('Activities', activities)}
 ${section('Points Of Interest', places)}
+${credits ? `<footer>Icons designed by ${credits}.</footer>` : ''}
 </body>
 </html>
 `
