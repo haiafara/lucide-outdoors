@@ -23,7 +23,8 @@ npm run demo       # regenerates the icon gallery into _site/
 
 ## Icon gallery
 
-The full set is published to GitHub Pages on every push to `main`:
+The full set is published to GitHub Pages on each release, so the gallery always reflects
+what is on npm:
 <https://haiafara.github.io/lucide-outdoors/>
 
 ## Release

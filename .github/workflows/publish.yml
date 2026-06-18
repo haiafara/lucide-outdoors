@@ -92,3 +92,14 @@ jobs:
           else
             npm publish -w lucide-outdoors-vue --provenance
           fi
+
+  # Refresh the published icon gallery only after a successful release, so it never shows
+  # icons that exist on main but were not published to npm.
+  deploy-gallery:
+    name: Deploy gallery to GitHub Pages
+    needs: publish
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/pages.yml

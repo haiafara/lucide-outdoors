@@ -1,8 +1,9 @@
 name: Deploy demo page
 
+# Deployed only after a successful release (called from publish.yml) so the public gallery
+# never shows icons that are on main but not yet published to npm. Can also be run manually.
 on:
-  push:
-    branches: [main]
+  workflow_call:
   workflow_dispatch:
 
 # Allow one concurrent deployment; let in-progress runs finish.
