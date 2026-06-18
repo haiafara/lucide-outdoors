@@ -1,0 +1,51 @@
+{
+  "name": "lucide-outdoors",
+  "version": "0.1.0",
+  "description": "Outdoor and activity icon data for the Lucide icon ecosystem",
+  "type": "module",
+  "main": "dist/cjs/lucide-outdoors.js",
+  "module": "dist/esm/lucide-outdoors.js",
+  "types": "dist/lucide-outdoors.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/lucide-outdoors.js",
+      "require": "./dist/cjs/lucide-outdoors.js",
+      "types": "./dist/lucide-outdoors.d.ts"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "author": "Hai Afară! <hello@haiafara.ro>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haiafara/lucide-outdoors.git"
+  },
+  "homepage": "https://github.com/haiafara/lucide-outdoors#readme",
+  "bugs": {
+    "url": "https://github.com/haiafara/lucide-outdoors/issues"
+  },
+  "keywords": [
+    "lucide",
+    "icons",
+    "outdoor",
+    "hiking",
+    "cycling",
+    "skiing",
+    "svg"
+  ],
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.0.0",
+    "rollup": "^4.9.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "tslib": "^2.6.0",
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "demo": "node .github/scripts/build-demo.mjs",
+    "prepublishOnly": "npm run build"
+  }
+}

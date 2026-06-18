@@ -2,7 +2,7 @@
 // exported by the built package. Run after `npm run build`.
 import { mkdir, writeFile } from 'node:fs/promises'
 import { readFile } from 'node:fs/promises'
-import * as icons from '../../dist/esm/lucide-outdoors.js'
+import * as icons from '../../packages/lucide-outdoors/dist/esm/lucide-outdoors.js'
 
 const ROOT_ATTRS = [
   'xmlns="http://www.w3.org/2000/svg"',
@@ -41,7 +41,7 @@ const entries = Object.entries(icons)
   .filter(([, v]) => isIconNode(v))
   .sort(([a], [b]) => a.localeCompare(b))
 
-const pkg = JSON.parse(await readFile(new URL('../../package.json', import.meta.url)))
+const pkg = JSON.parse(await readFile(new URL('../../packages/lucide-outdoors/package.json', import.meta.url)))
 
 const renderCard = ([name, node]) => {
   const kebab = toKebab(name)

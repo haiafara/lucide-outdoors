@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Extract and validate version from tag
         id: version
@@ -39,7 +39,7 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '22'
           registry-url: 'https://registry.npmjs.org'
@@ -47,46 +47,33 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Validate package.json version matches tag
-        run: |
-          PACKAGE_VERSION=$(node -p "require('./package.json').version")
-          TAG_VERSION="${{ steps.version.outputs.version }}"
-
-          echo "package.json version: $PACKAGE_VERSION"
-          echo "Release tag version: $TAG_VERSION"
-
-          if [[ "$PACKAGE_VERSION" != "$TAG_VERSION" ]]; then
-            echo "Error: Version mismatch!"
-            echo "  package.json: $PACKAGE_VERSION"
-            echo "  Release tag:  $TAG_VERSION"
-            echo ""
-            echo "Please update package.json version to match the release tag."
-            exit 1
-          fi
-
-          echo "Version validation passed ✓"
-
-      - name: Validate CHANGELOG.md entry exists
+      - name: Validate package versions and changelogs match the tag
         run: |
           VERSION="${{ steps.version.outputs.version }}"
+          for pkg in lucide-outdoors lucide-outdoors-vue; do
+            PKG_VERSION=$(node -p "require('./packages/$pkg/package.json').version")
+            echo "$pkg: package.json=$PKG_VERSION tag=$VERSION"
+            if [[ "$PKG_VERSION" != "$VERSION" ]]; then
+              echo "Error: packages/$pkg version ($PKG_VERSION) does not match tag ($VERSION)"
+              exit 1
+            fi
+            if ! grep -qE "^## \[$VERSION\]" "packages/$pkg/CHANGELOG.md"; then
+              echo "Error: No CHANGELOG.md entry for $VERSION in packages/$pkg"
+              exit 1
+            fi
+          done
+          echo "Validation passed ✓"
 
-          echo "Checking for CHANGELOG.md entry for version $VERSION"
-
-          if grep -qE "^## \[$VERSION\]" CHANGELOG.md; then
-            echo "CHANGELOG.md entry found ✓"
-          else
-            echo "Error: No CHANGELOG.md entry found for version $VERSION"
-            echo ""
-            echo "Expected format: ## [$VERSION] - YYYY-MM-DD"
-            echo "Please add a changelog entry following the Keep a Changelog format:"
-            echo "https://keepachangelog.com/"
-            exit 1
-          fi
-
-      - name: Build
+      - name: Build all packages
         run: npm run build
 
-      - name: Publish to npm
-        run: npm publish --provenance
+      # Publish the data package first so the dependency exists, then the Vue bindings.
+      - name: Publish lucide-outdoors
+        run: npm publish -w lucide-outdoors --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish lucide-outdoors-vue
+        run: npm publish -w lucide-outdoors-vue --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

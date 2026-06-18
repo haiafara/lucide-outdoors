@@ -1,0 +1,61 @@
+{
+  "name": "lucide-outdoors-vue",
+  "version": "0.1.0",
+  "description": "Outdoor and activity icons as Vue components for lucide-vue-next",
+  "type": "module",
+  "main": "dist/cjs/lucide-outdoors-vue.js",
+  "module": "dist/esm/lucide-outdoors-vue.js",
+  "types": "dist/lucide-outdoors-vue.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/lucide-outdoors-vue.js",
+      "require": "./dist/cjs/lucide-outdoors-vue.js",
+      "types": "./dist/lucide-outdoors-vue.d.ts"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "author": "Hai Afară! <hello@haiafara.ro>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/haiafara/lucide-outdoors-vue.git"
+  },
+  "homepage": "https://github.com/haiafara/lucide-outdoors-vue#readme",
+  "bugs": {
+    "url": "https://github.com/haiafara/lucide-outdoors-vue/issues"
+  },
+  "keywords": [
+    "lucide",
+    "icons",
+    "outdoor",
+    "hiking",
+    "cycling",
+    "skiing",
+    "vue",
+    "vue3",
+    "svg"
+  ],
+  "dependencies": {
+    "lucide-outdoors": "^0.1.0"
+  },
+  "peerDependencies": {
+    "lucide-vue-next": ">=0.400.0",
+    "vue": ">=3.0.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.0.0",
+    "lucide-vue-next": "^0.577.0",
+    "rollup": "^4.9.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "tslib": "^2.6.0",
+    "typescript": "^5.0.0",
+    "vue": "^3.5.0"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
+  }
+}

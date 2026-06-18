@@ -1,76 +1,34 @@
 # lucide-outdoors
 
-Outdoor and activity icon data for the [Lucide](https://lucide.dev) icon ecosystem.
+Monorepo for the lucide-outdoors icon set and its framework bindings.
 
-Provides `IconNode` arrays (the same format Lucide uses internally) for outdoor activity and POI icons not included in the core Lucide library.
+| Package | Description |
+|---|---|
+| [`lucide-outdoors`](./packages/lucide-outdoors) | Outdoor & activity icon data (`IconNode` arrays) for the [Lucide](https://lucide.dev) ecosystem |
+| [`lucide-outdoors-vue`](./packages/lucide-outdoors-vue) | The same icons as ready-made Vue 3 components, built on `lucide-vue-next` |
 
-## Install
+The two packages are developed and released in lockstep. `lucide-outdoors-vue` depends on
+`lucide-outdoors`; in this repo that dependency resolves to the local workspace, so a clean
+checkout builds without anything published to npm.
+
+## Develop
 
 ```bash
-npm install lucide-outdoors
+npm install        # links the workspaces together
+npm run build      # builds lucide-outdoors, then lucide-outdoors-vue
+npm run demo       # regenerates the icon gallery into _site/
 ```
 
-## Usage
+## Icon gallery
 
-```ts
-import { activityHiking, waterfall, campfire } from 'lucide-outdoors'
+The full set is published to GitHub Pages on every push to `main`:
+<https://haiafara.github.io/lucide-outdoors/>
 
-// Each icon is an IconNode array:
-// [elementName: string, attrs: Record<string, string>][]
-console.log(activityHiking)
-// [
-//   ['circle', { cx: '12', cy: '4', r: '2', key: 'activity-hiking-1' }],
-//   ['path', { d: 'M12 6 L12 14', key: 'activity-hiking-2' }],
-//   ...
-// ]
-```
+## Release
 
-Use with [`lucide-outdoors-vue`](https://github.com/haiafara/lucide-outdoors-vue) to get ready-made Vue components.
-
-## Icons
-
-All icon keys are unique to this package — none collide with core Lucide. Where Lucide already
-ships an equivalent (e.g. `house`, `flame`, `mountain`), use Lucide's icon directly.
-
-### Activities
-
-| Export | Icon key |
-|---|---|
-| `activityHiking` | `activity-hiking` |
-| `activityWalking` | `activity-walking` |
-| `activityRunning` | `activity-running` |
-| `activityTrailRunning` | `activity-trail-running` |
-| `activityBiking` | `activity-biking` |
-| `activityRoadCycling` | `activity-road-cycling` |
-| `activityGravelBiking` | `activity-gravel-biking` |
-| `activityMountainBiking` | `activity-mountain-biking` |
-| `activityERoadCycling` | `activity-e-road-cycling` |
-| `activityEGravelBiking` | `activity-e-gravel-biking` |
-| `activityEMountainBiking` | `activity-e-mountain-biking` |
-| `activitySkiing` | `activity-skiing` |
-| `activityCrossCountrySkiing` | `activity-cross-country-skiing` |
-| `activitySnowboarding` | `activity-snowboarding` |
-
-### Points of interest
-
-| Export | Icon key |
-|---|---|
-| `water` | `water` |
-| `waterfall` | `waterfall` |
-| `cave` | `cave` |
-| `mountainTree` | `mountain-tree` |
-| `panorama` | `panorama` |
-| `ruins` | `ruins` |
-| `monument` | `monument` |
-| `trailSign` | `trail-sign` |
-| `campfire` | `campfire` |
-| `tentTreeAlt` | `tent-tree-alt` |
-
-## Design
-
-Icons follow the [Lucide design system](https://lucide.dev/guide/design/icon-design-guide): 24x24 canvas, 2px stroke, round caps and joins.
-
-See [STYLE_GUIDE.md](./STYLE_GUIDE.md) for the full spec.
+Both packages share one version. Tag a release `vX.Y.Z` (with matching `version` in both
+`packages/*/package.json` and a CHANGELOG entry in each); the publish workflow builds the
+workspaces and publishes `lucide-outdoors` first, then `lucide-outdoors-vue`.
 
 ## License
 
