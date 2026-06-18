@@ -79,7 +79,7 @@ const html = `<!DOCTYPE html>
   .count { font-variant-numeric: tabular-nums; }
   .grid {
     display: grid; gap: 16px;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
   .icon {
     margin: 0; background: #fff; border: 1px solid #e8e8e8; border-radius: 10px;
@@ -88,9 +88,9 @@ const html = `<!DOCTYPE html>
   }
   .icon:hover { border-color: #bbb; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
   .icon svg { width: 40px; height: 40px; color: #1a1a1a; }
-  figcaption { display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; }
-  figcaption code { font-size: 12px; font-weight: 600; }
-  figcaption span { font-size: 10px; color: #999; }
+  figcaption { display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; max-width: 100%; }
+  figcaption code { font-size: 12px; font-weight: 600; overflow-wrap: anywhere; }
+  figcaption span { font-size: 10px; color: #999; overflow-wrap: anywhere; }
   @media (prefers-color-scheme: dark) {
     body { color: #e8e8e8; background: #111; }
     .sub { color: #999; }
