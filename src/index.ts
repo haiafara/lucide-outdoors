@@ -22,4 +22,12 @@ export {
   walking,
   skiing,
   snowboarding,
+  crossCountrySkiing,
+  fire,
+  mountainTree,
+  panorama,
+  ruins,
+  skis,
+  tentTree,
+  trailRunning,
 } from './icons'
