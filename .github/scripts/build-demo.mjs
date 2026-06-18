@@ -43,15 +43,19 @@ const entries = Object.entries(icons)
 
 const pkg = JSON.parse(await readFile(new URL('../../package.json', import.meta.url)))
 
-const cards = entries
-  .map(([name, node]) => {
-    const kebab = toKebab(name)
-    return `    <figure class="icon" title="${name}">
+const renderCard = ([name, node]) => {
+  const kebab = toKebab(name)
+  return `    <figure class="icon" title="${name}">
       ${renderSvg(node)}
       <figcaption><code>${name}</code><span>${kebab}</span></figcaption>
     </figure>`
-  })
-  .join('\n')
+}
+
+const activities = entries.filter(([name]) => name.startsWith('activity'))
+const places = entries.filter(([name]) => !name.startsWith('activity'))
+
+const section = (title, items) =>
+  `<h2>${title} <span class="count">${items.length}</span></h2>\n<div class="grid">\n${items.map(renderCard).join('\n')}\n</div>`
 
 const html = `<!DOCTYPE html>
 <html lang="en">
@@ -69,6 +73,8 @@ const html = `<!DOCTYPE html>
   }
   header { margin-bottom: 40px; }
   h1 { font-size: 24px; font-weight: 650; margin: 0 0 8px; }
+  h2 { font-size: 16px; font-weight: 650; margin: 40px 0 16px; display: flex; align-items: baseline; gap: 8px; }
+  h2 .count { font-size: 12px; font-weight: 500; color: #999; }
   .sub { color: #666; font-size: 14px; margin: 0; }
   .count { font-variant-numeric: tabular-nums; }
   .grid {
@@ -101,9 +107,8 @@ const html = `<!DOCTYPE html>
   <p class="sub">${pkg.description || ''}</p>
   <p class="sub"><span class="count">${entries.length}</span> icons · v${pkg.version} · use the <code>code</code> name to import, the lower name with <code>resolveIcon()</code></p>
 </header>
-<div class="grid">
-${cards}
-</div>
+${section('Activities', activities)}
+${section('Points of interest', places)}
 </body>
 </html>
 `

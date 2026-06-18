@@ -13,14 +13,14 @@ npm install lucide-outdoors
 ## Usage
 
 ```ts
-import { hiking, waterfall, campfire } from 'lucide-outdoors'
+import { activityHiking, waterfall, campfire } from 'lucide-outdoors'
 
 // Each icon is an IconNode array:
 // [elementName: string, attrs: Record<string, string>][]
-console.log(hiking)
+console.log(activityHiking)
 // [
-//   ['circle', { cx: '12', cy: '4', r: '2', key: 'hiking-1' }],
-//   ['path', { d: 'M12 6 L12 14', key: 'hiking-2' }],
+//   ['circle', { cx: '12', cy: '4', r: '2', key: 'activity-hiking-1' }],
+//   ['path', { d: 'M12 6 L12 14', key: 'activity-hiking-2' }],
 //   ...
 // ]
 ```
@@ -32,27 +32,26 @@ Use with [`lucide-outdoors-vue`](https://github.com/haiafara/lucide-outdoors-vue
 All icon keys are unique to this package — none collide with core Lucide. Where Lucide already
 ships an equivalent (e.g. `house`, `flame`, `mountain`), use Lucide's icon directly.
 
-### Trail activity icons
+### Activities
 
 | Export | Icon key |
 |---|---|
-| `hiking` | `hiking` |
-| `walking` | `walking` |
-| `running` | `running` |
-| `trailRunning` | `trail-running` |
-| `biking` | `biking` |
-| `roadCycling` | `road-cycling` |
-| `gravelBiking` | `gravel-biking` |
-| `mountainBiking` | `mountain-biking` |
-| `eRoadCycling` | `e-road-cycling` |
-| `eGravelBiking` | `e-gravel-biking` |
-| `eMountainBiking` | `e-mountain-biking` |
-| `skiing` | `skiing` |
-| `crossCountrySkiing` | `cross-country-skiing` |
-| `snowboarding` | `snowboarding` |
-| `skis` | `skis` |
+| `activityHiking` | `activity-hiking` |
+| `activityWalking` | `activity-walking` |
+| `activityRunning` | `activity-running` |
+| `activityTrailRunning` | `activity-trail-running` |
+| `activityBiking` | `activity-biking` |
+| `activityRoadCycling` | `activity-road-cycling` |
+| `activityGravelBiking` | `activity-gravel-biking` |
+| `activityMountainBiking` | `activity-mountain-biking` |
+| `activityERoadCycling` | `activity-e-road-cycling` |
+| `activityEGravelBiking` | `activity-e-gravel-biking` |
+| `activityEMountainBiking` | `activity-e-mountain-biking` |
+| `activitySkiing` | `activity-skiing` |
+| `activityCrossCountrySkiing` | `activity-cross-country-skiing` |
+| `activitySnowboarding` | `activity-snowboarding` |
 
-### POI icons
+### Points of interest
 
 | Export | Icon key |
 |---|---|
