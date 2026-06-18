@@ -42,6 +42,8 @@ const entries = Object.entries(icons)
   .sort(([a], [b]) => a.localeCompare(b))
 
 const pkg = JSON.parse(await readFile(new URL('../../packages/lucide-outdoors/package.json', import.meta.url)))
+const repoUrl = (pkg.repository?.url || 'https://github.com/haiafara/lucide-outdoors')
+  .replace(/^git\+/, '').replace(/\.git$/, '')
 
 const renderCard = ([name, node]) => {
   const kebab = toKebab(name)
@@ -90,6 +92,8 @@ const html = `<!DOCTYPE html>
   h2 { font-size: 16px; font-weight: 650; margin: 40px 0 16px; display: flex; align-items: baseline; gap: 8px; }
   h2 .count { font-size: 12px; font-weight: 500; color: #999; }
   .sub { color: #666; font-size: 14px; margin: 0; }
+  .sub a { color: #2563eb; text-decoration: none; }
+  .sub a:hover { text-decoration: underline; }
   .count { font-variant-numeric: tabular-nums; }
   .grid {
     display: grid; gap: 16px;
@@ -120,6 +124,7 @@ const html = `<!DOCTYPE html>
   <h1>lucide-outdoors</h1>
   <p class="sub">${pkg.description || ''}</p>
   <p class="sub"><span class="count">${entries.length}</span> icons · v${pkg.version} · use the <code>code</code> name to import, the lower name with <code>resolveIcon()</code></p>
+  <p class="sub"><a href="${repoUrl}">${repoUrl.replace(/^https:\/\//, '')} ↗</a></p>
 </header>
 ${section('Activities', activities)}
 ${section('Points of interest', places)}
