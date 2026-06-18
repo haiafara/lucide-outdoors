@@ -21,7 +21,8 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/haiafara/lucide-outdoors.git"
+    "url": "https://github.com/haiafara/lucide-outdoors.git",
+    "directory": "packages/lucide-outdoors"
   },
   "homepage": "https://github.com/haiafara/lucide-outdoors#readme",
   "bugs": {
