@@ -127,7 +127,7 @@ const html = `<!DOCTYPE html>
   <p class="sub"><a href="${repoUrl}">${repoUrl.replace(/^https:\/\//, '')}</a></p>
 </header>
 ${section('Activities', activities)}
-${section('Points of interest', places)}
+${section('Points Of Interest', places)}
 </body>
 </html>
 `
