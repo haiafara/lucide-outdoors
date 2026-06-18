@@ -1,11 +1,7 @@
 import type { IconNode } from '../types'
 
-// Placeholder -- to be replaced with an original design
 export const gravelBiking: IconNode = [
-  ['circle', { cx: '6', cy: '16', r: '4', key: 'gravel-biking-1' }],
-  ['circle', { cx: '18', cy: '16', r: '4', key: 'gravel-biking-2' }],
-  ['path', { d: 'M6 16 L10 8 L15 8', key: 'gravel-biking-3' }],
-  ['path', { d: 'M18 16 L15 8 L10 16', key: 'gravel-biking-4' }],
-  ['circle', { cx: '15', cy: '5', r: '1.5', key: 'gravel-biking-5' }],
-  ['line', { x1: '13', y1: '8', x2: '17', y2: '8', key: 'gravel-biking-6' }],
+  ['circle', { cx: '18.5', cy: '15.234', r: '3.5', key: 'gravel-biking-1' }],
+  ['path', { d: 'M8.975 15.651A3.501 3.501 0 0 1 2 15.234a3.5 3.5 0 0 1 5.193-3.064', key: 'gravel-biking-2' }],
+  ['path', { d: 'M14.797 8.354 11 15.304H5.456l3.341-6.152 2.962 3.987m6.684 2.165L13.962 6h3.228M8.693 8.962H6.215M2 22h7l2-2 2 2 1-1 1 1h7', key: 'gravel-biking-3' }],
 ]

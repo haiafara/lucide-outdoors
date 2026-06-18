@@ -1,10 +1,8 @@
 import type { IconNode } from '../types'
 
 export const waterfall: IconNode = [
-  ['path', { d: 'M4 4 L4 10 Q4 12 6 12', key: 'waterfall-1' }],
-  ['path', { d: 'M8 4 C8 8 7 12 6 16', key: 'waterfall-2' }],
-  ['path', { d: 'M11 4 C10 9 9 13 7 17', key: 'waterfall-3' }],
-  ['path', { d: 'M14 4 C13 10 11 14 9 18', key: 'waterfall-4' }],
-  ['path', { d: 'M20 4 L20 10 Q20 12 18 12', key: 'waterfall-5' }],
-  ['path', { d: 'M3 19 Q7 16 12 19 Q17 22 21 19', key: 'waterfall-6' }],
+  ['path', { d: 'M7 19.5a2.5 2.5 0 1 1-5 0m10 0a2.5 2.5 0 1 1-5 0m10 0a2.5 2.5 0 1 1-5 0m10 0a2.5 2.5 0 1 1-5 0M18 2v11a3 3 0 0 0 3 3h0M3 16a3 3 0 0 0 3-3V2', key: 'waterfall-1' }],
+  ['circle', { cx: '13.918', cy: '14.5', r: '.5', key: 'waterfall-2' }],
+  ['circle', { cx: '9.93', cy: '10.5', r: '.5', key: 'waterfall-3' }],
+  ['path', { d: 'M13.905 2.43v7.032M10 2v4', key: 'waterfall-4' }],
 ]

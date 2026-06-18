@@ -1,11 +1,5 @@
 import type { IconNode } from '../types'
 
 export const running: IconNode = [
-  ['circle', { cx: '14', cy: '4', r: '2', key: 'running-1' }],
-  ['path', { d: 'M14 6 L13 11 L16 14 L20 14', key: 'running-2' }],
-  ['path', { d: 'M13 11 L9 15 L5 15', key: 'running-3' }],
-  ['path', { d: 'M13 11 L10 8 L6 9', key: 'running-4' }],
-  ['path', { d: 'M13 11 L17 9 L19 5', key: 'running-5' }],
-  ['path', { d: 'M16 14 L17 19 L15 21', key: 'running-6' }],
-  ['path', { d: 'M9 15 L7 20 L4 21', key: 'running-7' }],
+  ['path', { d: 'M2 18h4m0 4h14a2 2 0 0 0 2-2c0-2-1.952-2.651-3-3-3-1-3-5-3-8a1 1 0 0 0-.677-.947S13.581 8 13 8c-2 0-3-2.129-3-3V3a1 1 0 0 0-1.59-.808L2.8 6.4a2 2 0 0 0-.215 3.015L14.999 22m.928-9.832-3.019-.029', key: 'running-1' }],
 ]

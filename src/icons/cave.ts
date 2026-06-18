@@ -1,7 +1,6 @@
 import type { IconNode } from '../types'
 
 export const cave: IconNode = [
-  ['path', { d: 'M2 20 L2 12 Q2 4 12 4 Q22 4 22 12 L22 20', key: 'cave-1' }],
-  ['path', { d: 'M7 20 L7 14 Q7 9 12 9 Q17 9 17 14 L17 20', key: 'cave-2' }],
-  ['path', { d: 'M9 20 Q12 17 15 20', key: 'cave-3' }],
+  ['path', { d: 'm8 3 4 8 5-5 5 15H2z', key: 'cave-1' }],
+  ['path', { d: 'M11.918 14A3.083 3.083 0 0 1 15 17.082V21H8.835v-3.918A3.083 3.083 0 0 1 11.917 14Z', key: 'cave-2' }],
 ]

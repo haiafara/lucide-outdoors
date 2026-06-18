@@ -1,11 +1,8 @@
 import type { IconNode } from '../types'
 
-// Placeholder -- to be replaced with an original design
 export const roadCycling: IconNode = [
-  ['circle', { cx: '6', cy: '16', r: '4', key: 'road-cycling-1' }],
-  ['circle', { cx: '18', cy: '16', r: '4', key: 'road-cycling-2' }],
-  ['path', { d: 'M6 16 L10 8 L15 8', key: 'road-cycling-3' }],
-  ['path', { d: 'M18 16 L15 8 L10 16', key: 'road-cycling-4' }],
-  ['circle', { cx: '15', cy: '5', r: '1.5', key: 'road-cycling-5' }],
-  ['line', { x1: '13', y1: '8', x2: '17', y2: '8', key: 'road-cycling-6' }],
+  ['circle', { cx: '18.5', cy: '15.5', r: '3.5', key: 'road-cycling-1' }],
+  ['path', { d: 'M5.456 15.57 9 9H6m8.797-.38L11 15.57m7.443 0-3.316-7.081A1.748 1.748 0 0 1 16.71 6h.48', key: 'road-cycling-2' }],
+  ['circle', { cx: '5.5', cy: '15.5', r: '3.5', key: 'road-cycling-3' }],
+  ['path', { d: 'M8 11h5', key: 'road-cycling-4' }],
 ]

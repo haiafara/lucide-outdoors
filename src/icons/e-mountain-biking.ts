@@ -1,11 +1,7 @@
 import type { IconNode } from '../types'
 
-// Placeholder -- to be replaced with an original design
 export const eMountainBiking: IconNode = [
-  ['circle', { cx: '6', cy: '16', r: '4', key: 'e-mountain-biking-1' }],
-  ['circle', { cx: '18', cy: '16', r: '4', key: 'e-mountain-biking-2' }],
-  ['path', { d: 'M6 16 L10 8 L15 8', key: 'e-mountain-biking-3' }],
-  ['path', { d: 'M18 16 L15 8 L10 16', key: 'e-mountain-biking-4' }],
-  ['circle', { cx: '15', cy: '5', r: '1.5', key: 'e-mountain-biking-5' }],
-  ['line', { x1: '13', y1: '8', x2: '17', y2: '8', key: 'e-mountain-biking-6' }],
+  ['circle', { cx: '18.5', cy: '18.234', r: '3.5', key: 'e-mountain-biking-1' }],
+  ['path', { d: 'M8.975 18.651A3.501 3.501 0 0 1 2 18.234a3.5 3.5 0 0 1 5.193-3.064', key: 'e-mountain-biking-2' }],
+  ['path', { d: 'M14.797 11.354 11 18.304H5.456l3.341-6.152 2.962 3.987m6.684 2.165L13.962 9h3.228m-8.497 2.962H6.215M4.959 2 2.095 4.978 6 5.041 2.937 7.978M9 7l4.167-5L17 6m0 0 2.143-2.429L22 6.429', key: 'e-mountain-biking-3' }],
 ]
