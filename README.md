@@ -28,9 +28,26 @@ The full set is published to GitHub Pages on every push to `main`:
 
 ## Release
 
-Both packages share one version. Tag a release `vX.Y.Z` (with matching `version` in both
-`packages/*/package.json` and a CHANGELOG entry in each); the publish workflow builds the
-workspaces and publishes `lucide-outdoors` first, then `lucide-outdoors-vue`.
+Both packages share one version and are released together.
+
+1. Make sure everything works locally by running `npm install` and `npm run build`
+2. Bump the `version` to the same value in both
+   [`packages/lucide-outdoors/package.json`](packages/lucide-outdoors/package.json) and
+   [`packages/lucide-outdoors-vue/package.json`](packages/lucide-outdoors-vue/package.json)
+3. Add an entry for the new version in each package's `CHANGELOG.md`
+   ([lucide-outdoors](packages/lucide-outdoors/CHANGELOG.md),
+   [lucide-outdoors-vue](packages/lucide-outdoors-vue/CHANGELOG.md)) following the
+   [Keep a Changelog](https://keepachangelog.com/) format
+4. Commit and push the changes to `main`
+5. Draft a new release on the [releases page](https://github.com/haiafara/lucide-outdoors/releases)
+    - Create a tag with the prefix **v** and the version, eg: **v1.0.0**
+    - Prefix the release title with the tag, eg: **v1.0.0 - Initial release**
+6. Publish the release
+
+The publish workflow validates that the release tag matches the `version` in both packages and
+that each `CHANGELOG.md` has an entry for the version, then builds and publishes `lucide-outdoors`
+first, then `lucide-outdoors-vue`, to npm with provenance via OIDC trusted publishing (no token
+required).
 
 ## License
 
