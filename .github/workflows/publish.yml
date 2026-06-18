@@ -41,8 +41,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version: '24'
           registry-url: 'https://registry.npmjs.org'
+
+      # Trusted publishing (OIDC) requires npm >= 11.5.1.
+      - name: Upgrade npm
+        run: npm install -g npm@latest
 
       - name: Install dependencies
         run: npm install
@@ -68,12 +72,9 @@ jobs:
         run: npm run build
 
       # Publish the data package first so the dependency exists, then the Vue bindings.
+      # Auth is via OIDC trusted publishing (configured per package on npmjs.com) -- no token.
       - name: Publish lucide-outdoors
         run: npm publish -w lucide-outdoors --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish lucide-outdoors-vue
         run: npm publish -w lucide-outdoors-vue --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

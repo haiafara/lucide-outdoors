@@ -1,6 +1,6 @@
 {
   "name": "lucide-outdoors-vue",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Outdoor and activity icons as Vue components for lucide-vue-next",
   "type": "module",
   "main": "dist/cjs/lucide-outdoors-vue.js",
