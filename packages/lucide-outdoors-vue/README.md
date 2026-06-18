@@ -2,7 +2,7 @@
 
 Outdoor and activity icons as Vue 3 components, built on top of [`lucide-vue-next`](https://github.com/lucide-icons/lucide).
 
-**🔗 [Browse the icon gallery →](https://haiafara.github.io/lucide-outdoors/)**
+**[Browse the icon gallery](https://haiafara.github.io/lucide-outdoors/)**
 
 ## Install
 

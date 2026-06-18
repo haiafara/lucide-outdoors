@@ -124,7 +124,7 @@ const html = `<!DOCTYPE html>
   <h1>lucide-outdoors</h1>
   <p class="sub">${pkg.description || ''}</p>
   <p class="sub"><span class="count">${entries.length}</span> icons · v${pkg.version} · use the <code>code</code> name to import, the lower name with <code>resolveIcon()</code></p>
-  <p class="sub"><a href="${repoUrl}">${repoUrl.replace(/^https:\/\//, '')} ↗</a></p>
+  <p class="sub"><a href="${repoUrl}">${repoUrl.replace(/^https:\/\//, '')}</a></p>
 </header>
 ${section('Activities', activities)}
 ${section('Points of interest', places)}

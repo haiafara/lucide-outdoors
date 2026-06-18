@@ -2,7 +2,7 @@
 
 Monorepo for the lucide-outdoors icon set and its framework bindings.
 
-**🔗 [Browse the icon gallery →](https://haiafara.github.io/lucide-outdoors/)**
+**[Browse the icon gallery](https://haiafara.github.io/lucide-outdoors/)**
 
 | Package | Description |
 |---|---|

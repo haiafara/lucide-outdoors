@@ -4,7 +4,7 @@ Outdoor and activity icon data for the [Lucide](https://lucide.dev) icon ecosyst
 
 Provides `IconNode` arrays (the same format Lucide uses internally) for outdoor activity and POI icons not included in the core Lucide library.
 
-**🔗 [Browse the icon gallery →](https://haiafara.github.io/lucide-outdoors/)**
+**[Browse the icon gallery](https://haiafara.github.io/lucide-outdoors/)**
 
 ## Install
 
