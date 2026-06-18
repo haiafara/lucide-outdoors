@@ -73,8 +73,22 @@ jobs:
 
       # Publish the data package first so the dependency exists, then the Vue bindings.
       # Auth is via OIDC trusted publishing (configured per package on npmjs.com) -- no token.
+      # Each step skips if that exact version is already on npm, so a partial failure is
+      # safe to re-run without tripping over the "cannot republish a version" error.
       - name: Publish lucide-outdoors
-        run: npm publish -w lucide-outdoors --provenance
+        run: |
+          V="${{ steps.version.outputs.version }}"
+          if npm view "lucide-outdoors@$V" version >/dev/null 2>&1; then
+            echo "lucide-outdoors@$V already published, skipping."
+          else
+            npm publish -w lucide-outdoors --provenance
+          fi
 
       - name: Publish lucide-outdoors-vue
-        run: npm publish -w lucide-outdoors-vue --provenance
+        run: |
+          V="${{ steps.version.outputs.version }}"
+          if npm view "lucide-outdoors-vue@$V" version >/dev/null 2>&1; then
+            echo "lucide-outdoors-vue@$V already published, skipping."
+          else
+            npm publish -w lucide-outdoors-vue --provenance
+          fi
