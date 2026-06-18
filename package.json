@@ -45,6 +45,7 @@
   },
   "scripts": {
     "build": "rollup -c",
+    "demo": "node .github/scripts/build-demo.mjs",
     "prepublishOnly": "npm run build"
   }
 }
