@@ -13,7 +13,7 @@ npm install lucide-outdoors
 ## Usage
 
 ```ts
-import { hiking, mountain, waterfall } from 'lucide-outdoors'
+import { hiking, waterfall, campfire } from 'lucide-outdoors'
 
 // Each icon is an IconNode array:
 // [elementName: string, attrs: Record<string, string>][]
@@ -29,6 +29,9 @@ Use with [`lucide-outdoors-vue`](https://github.com/haiafara/lucide-outdoors-vue
 
 ## Icons
 
+All icon keys are unique to this package — none collide with core Lucide. Where Lucide already
+ships an equivalent (e.g. `house`, `flame`, `mountain`), use Lucide's icon directly.
+
 ### Trail activity icons
 
 | Export | Icon key |
@@ -36,6 +39,7 @@ Use with [`lucide-outdoors-vue`](https://github.com/haiafara/lucide-outdoors-vue
 | `hiking` | `hiking` |
 | `walking` | `walking` |
 | `running` | `running` |
+| `trailRunning` | `trail-running` |
 | `biking` | `biking` |
 | `roadCycling` | `road-cycling` |
 | `gravelBiking` | `gravel-biking` |
@@ -44,21 +48,24 @@ Use with [`lucide-outdoors-vue`](https://github.com/haiafara/lucide-outdoors-vue
 | `eGravelBiking` | `e-gravel-biking` |
 | `eMountainBiking` | `e-mountain-biking` |
 | `skiing` | `skiing` |
+| `crossCountrySkiing` | `cross-country-skiing` |
 | `snowboarding` | `snowboarding` |
+| `skis` | `skis` |
 
 ### POI icons
 
 | Export | Icon key |
 |---|---|
-| `mountain` | `mountain` |
 | `water` | `water` |
-| `church` | `church` |
-| `trailSign` | `trail-sign` |
-| `eye` | `eye` |
-| `home` | `home` |
 | `waterfall` | `waterfall` |
 | `cave` | `cave` |
+| `mountainTree` | `mountain-tree` |
+| `panorama` | `panorama` |
+| `ruins` | `ruins` |
 | `monument` | `monument` |
+| `trailSign` | `trail-sign` |
+| `campfire` | `campfire` |
+| `tentTreeAlt` | `tent-tree-alt` |
 
 ## Design
 

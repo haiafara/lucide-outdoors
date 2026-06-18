@@ -1,12 +1,8 @@
 export type { IconNode, IconNodeChild } from './types'
 
 export {
-  mountain,
   water,
-  church,
   trailSign,
-  eye,
-  home,
   waterfall,
   cave,
   monument,
@@ -23,11 +19,11 @@ export {
   skiing,
   snowboarding,
   crossCountrySkiing,
-  fire,
+  campfire,
   mountainTree,
   panorama,
   ruins,
   skis,
-  tentTree,
+  tentTreeAlt,
   trailRunning,
 } from './icons'
