@@ -51,7 +51,21 @@ const renderCard = ([name, node]) => {
     </figure>`
 }
 
-const activities = entries.filter(([name]) => name.startsWith('activity'))
+// Order activities by logical group, then alphabetically within each group.
+// Groups are detected from the icon name, so new activities slot in
+// automatically: on foot -> cycling -> electric cycling -> winter.
+const activityWeight = (name) => {
+  const n = name.toLowerCase()
+  if (/walk|run|hik/.test(n)) return 0    // on foot
+  if (/^activitye/.test(n)) return 2      // electric (checked before cycling)
+  if (/bik|cycl/.test(n)) return 1        // cycling
+  if (/ski|snow/.test(n)) return 3        // winter
+  return 4                                // anything new, after the known groups
+}
+
+const activities = entries
+  .filter(([name]) => name.startsWith('activity'))
+  .sort(([a], [b]) => activityWeight(a) - activityWeight(b) || a.localeCompare(b))
 const places = entries.filter(([name]) => !name.startsWith('activity'))
 
 const section = (title, items) =>
